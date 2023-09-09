@@ -5,11 +5,14 @@ import ModalWindow from '../Modal/Modal';
 
 export default function CardItem({ quiz }) {
   const [isShowModal, setShowModal] = useState(false);
+  const [isShowModal1, setShowModal1] = useState(true);
 
   const handleShowModal = () => {
     setShowModal(!isShowModal);
   };
-
+  const handleShowModal1 = () => {
+    setShowModal1(!isShowModal1);
+  };
   return (
     <>
       <Card sx={{ maxWidth: 445, padding:10, backgroundColor: 'rgba(102,191,191,0.09)', boxShadow:12, margin:3}}>
@@ -31,7 +34,7 @@ export default function CardItem({ quiz }) {
           <Button size="medium" onClick={handleShowModal}>Learn More</Button>
         </CardActions>
       </Card>
-      {isShowModal && <ModalWindow  quiz={ quiz } />}
+      {isShowModal && <ModalWindow quiz={ quiz } />}
     </>
   );
 }
