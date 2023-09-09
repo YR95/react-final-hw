@@ -7,6 +7,7 @@ import {
 import ButtonAppBar from './components/SideBar/SideBar';
 import ListDividers from './components/SideBar/SideBar';
 import FooterItem from './components/Footer/FooterItem';
+import Quizes from './pages/quizes/Quiz';
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
 
       </SideBarGrid>
       <MainGrid item  xs={11} lg={9}>
-        {/*<Item>*/}
-        {/*  <Continents />*/}
-        {/*</Item>*/}
+        <Item>
+          <Quizes/>
+        </Item>
       </MainGrid>
       <FooterGrid item xs={12} lg={12}>
         <Item><FooterItem/></Item>
