@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import { Continents } from './pages/continents';
+import './styled.js';
+import {
+  FooterGrid, HeaderGrid, Item, LogoText, MainGrid, MainWrapp, SideBarGrid,
+} from './styled.js';
+import ButtonAppBar from './components/SideBar/SideBar';
+import ListDividers from './components/SideBar/SideBar';
+import FooterItem from './components/Footer/FooterItem';
+import Quizes from './pages/quizes/Quiz';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainWrapp container>
+      <HeaderGrid item xs={12} lg={12}>
+        <Item>
+          <LogoText variant="h1" component="h2">Quiz Time</LogoText>
+          <LogoText variant="h3" component="h2">Boost yourself</LogoText>
+        </Item>
+      </HeaderGrid>
+      <SideBarGrid item xs={1} lg={3}>
+        <Item><ListDividers/></Item>
+
+      </SideBarGrid>
+      <MainGrid item  xs={11} lg={9}>
+        <Item>
+          <Quizes/>
+        </Item>
+      </MainGrid>
+      <FooterGrid item xs={12} lg={12}>
+        <Item><FooterItem/></Item>
+      </FooterGrid>
+    </MainWrapp>
   );
 }
 
